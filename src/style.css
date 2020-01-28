@@ -14,7 +14,7 @@ i {
     color: #263238;
 }
 
-header {
+header .cabecalho {
     max-height: 200px;
     display: flex;
     padding: 10px 50px;
@@ -22,40 +22,45 @@ header {
     justify-content: space-around;
 }
 
-header img {
+header .cabecalho .menu {
+    display: none;
+}
+
+header .cabecalho img {
     max-height: 50px;
 }
 
-header .search {
+header .cabecalho .search {
     width: 50%;
+    display: flex;
 }
 
-header .search input {
+header .cabecalho .search input {
     border: none;
     border-bottom: 1px solid #78909c;
     width: 90%;
 }
 
-header .search i {
+header .cabecalho .search i {
     position: relative;
-    right: 30px;
+    right: 23px;
 }
 
-header .user {
+header .cabecalho .user {
     display: flex;
     align-items: center;
 }
 
-header .user span {
+header .cabecalho .user span {
     font-size: 13px;
     color: #78909c;
 }
 
-header .carrinho {
+header .cabecalho .carrinho {
     display: inherit;
 }
 
-header .carrinho .count {
+header .cabecalho .carrinho .count {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -67,6 +72,14 @@ header .carrinho .count {
 
 #banner img {
     height: 300px;
+}
+
+#banner .item img:nth-child(2) {
+    display: none;
+}
+
+#banner .responsive {
+    display: none;
 }
 
 .sec-produtos {
@@ -258,7 +271,97 @@ footer {
 }
 
 @media (max-width: 750px) {
-    header .user span {
+    header .cabecalho .user span {
         display: none;
     }
+
+    #banner .responsive {
+        position: absolute;
+        top: 0;
+        font-size: 25px;
+        display: flex;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        padding: 25px;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    #banner .responsive span:last-child {
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    #banner .item img:nth-child(1) {
+        display: none;
+    }
+
+    #banner .item img:nth-child(2) {
+        display: block;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer div {
+        margin-bottom: 20px;
+    }
+
+    footer .created {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    footer .localizacao {
+        width: 100%;
+    }
 }
+
+@media (max-width: 640px) {
+    header .cabecalho {
+        height: 100px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px 10px;
+    }
+
+    header .cabecalho .menu {
+        display: block;
+    }
+
+    header .cabecalho img {
+        grid-column-start: 2;
+    }
+
+    header .cabecalho .search {
+        width: 100%;
+        display: flex;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        position: relative;
+    }
+
+    header .cabecalho .search input {
+        width: 100%;
+    }
+    header .cabecalho .search i {
+        position: absolute;
+        right: 0;
+        top: -7px;
+    }
+    
+    header .cabecalho .user {
+        display: none;
+    }
+
+    header .cabecalho .carrinho {
+        display: flex;
+        justify-self: end;
+    }
+}
+
