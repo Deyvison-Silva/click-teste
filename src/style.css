@@ -10,11 +10,16 @@ html, body {
     height: 100%;
 }
 
+i {
+    color: #263238;
+}
+
 header {
     max-height: 200px;
     display: flex;
     padding: 10px 50px;
     align-items: center;
+    justify-content: space-around;
 }
 
 header img {
@@ -36,12 +41,136 @@ header .search i {
     right: 30px;
 }
 
+header .user {
+    display: flex;
+    align-items: center;
+}
+
+header .user span {
+    font-size: 13px;
+    color: #78909c;
+}
+
+header .carrinho {
+    display: inherit;
+}
+
+header .carrinho .count {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f44336;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+
 #banner img {
     height: 300px;
 }
 
+.sec-produtos {
+    max-width: 70%;
+    margin: 20px auto;
+}
+
+.sec-produtos .separador {
+    height: 5px;
+    width: 50px;
+    border-radius: 2px;
+    margin: 5px 0 20px 0;
+    background-color: #b0bec5;
+}
+
 #produtos img {
     height: 200px;
+}
+/* 
+#produtos .item {
+    transition: all 0.5s ease-in;
+} */
+
+#produtos .item {
+    border-radius: 0 0 4px 4px;
+}
+
+#produtos .item:hover {
+    background-color: rgba(176, 190, 197, 0.2);
+}
+
+#produtos .item .info {
+    display: grid;
+    text-align: center;
+}
+
+.info .desconto {
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid #F8475F;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.info .sp-desconto {
+    position: absolute;
+    top: 9px;
+    right: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.info .title {
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.info .avaliacao {
+    margin-bottom: 10px;
+}
+
+.info .avaliacao i {
+    transform: scale(0.8);
+    color: #F8475F;
+}
+
+.info .preco {
+    font-weight: bold;
+}
+
+.info .parcelamento {
+    font-size: 11px;
+}
+
+.info button {
+    margin: 8px auto;
+    border: none;
+    background-color: #263238;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.sec-produtos .arrow {
+    position: absolute;
+    bottom: 0;
+}
+
+.sec-produtos .left {
+    left: 0;
+}
+
+.sec-produtos .right {
+    right: 0;
+}
+
+.sec-produtos .arrow i {
+    transform: scale(2);
 }
 
 footer {
@@ -62,8 +191,8 @@ footer {
 .localizacao .separador {
     height: 5px;
     width: 50px;
-    background-color: #fff;
     margin: 20px 0;
+    background-color: #fff;
 }
 
 .localizacao span{
@@ -97,4 +226,10 @@ footer {
 
 .created img {
     max-height: 35px;
+}
+
+@media (max-width: 750px) {
+    header .user span {
+        display: none;
+    }
 }
