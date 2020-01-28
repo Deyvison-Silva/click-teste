@@ -3,7 +3,6 @@ const url = 'https://www.clickqi.com.br/api/dataentities/CG/search?_fields=produ
 function listarProdutos() {
     $(document).ready(function(){
         $.get(url, function(data) {
-            console.log(data);
 
             if (data && data.length) {
                 data.forEach(produto => {

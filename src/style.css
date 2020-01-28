@@ -12,6 +12,7 @@ html, body {
 
 i {
     color: #263238;
+    cursor: context-menu;
 }
 
 header .cabecalho {
@@ -213,6 +214,7 @@ header .cabecalho .carrinho .count {
 
 .sec-produtos .arrow i {
     transform: scale(2);
+    cursor: pointer;
 }
 
 footer {
