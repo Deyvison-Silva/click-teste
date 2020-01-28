@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="../lib/owlCarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../lib/owlCarousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </head>
-<script type="text/javascript" src="index.js"></script>
 <body>
     <header>
         <img src="../images/logo.png" alt="">
@@ -49,62 +51,11 @@
             <span>Mais Vendidos</span>
             <div class="separador"></div>
             <div id="produtos" class="owl-carousel owl-theme">
-                <div class="item">
-                    <img src="../images/sapato1.png">
-                    <div class="info">
-                        <div class="desconto"></div>
-                        <span class="sp-desconto">OFF</span>
-                        <span class="title">Sapato Floater Preto</span>
-                        <span class="avaliacao">
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star_border</i>
-                        </span>
-                        <div class="preco">
-                            <span>por</span>
-                            <span class="valor">R$ 259,90</span>
-                        </div>
-                        <span class="parcelamento">ou em 9x de 26,87</span>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../images/img-carousel.png">
-                </div>
-                <div class="item">
-                    <img src="../images/img-carousel.png">
-                </div>
-                <div class="item">
-                    <img src="../images/sapato1.png">
-                    <div class="info">
-                        <div class="desconto"></div>
-                        <span class="sp-desconto">OFF</span>
-                        <span class="title">Sapato Floater Preto</span>
-                        <span class="avaliacao">
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star</i>
-                            <i class="material-icons">star_border</i>
-                        </span>
-                        <div class="preco">
-                            <span>por</span>
-                            <span class="valor">R$ 259,90</span>
-                        </div>
-                        <span class="parcelamento">ou em 9x de 26,87</span>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../images/img-carousel.png">
-                </div>
             </div>
-            <div class="arrow left">
+            <div id="arrow_left" class="arrow left" onselectstart="return false">
                 <i class="material-icons">keyboard_arrow_left</i>
             </div>
-            <div class="arrow right">
+            <div id="arrow_right" class="arrow right" onselectstart="return false"  >
                 <i class="material-icons">keyboard_arrow_right</i>
             </div>
         </div>
@@ -134,36 +85,7 @@
             <img src="../images/vtex.png">
         </div>
     </footer>
-    <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/owlCarousel/dist/owl.carousel.min.js" ></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#banner").owlCarousel({
-                animateOut: 'slideOutDown',
-                animateIn: 'flipInX',
-                loop: true,
-                items:1,
-            });
-        });
-        $(document).ready(function(){
-            $("#produtos").owlCarousel({
-                loop:true,
-                margin:10,
-                responsiveClass:true,
-                dots: false,
-                responsive:{
-                    0:{
-                        items:1,
-                    },
-                    600:{
-                        items:3,
-                    },
-                    1000:{
-                        items:4,
-                    }
-                }
-            });
-        });
-    </script>
+    <script type="text/javascript" src="carousel.js"></script>
 </body>
 </html>

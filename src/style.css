@@ -84,6 +84,8 @@ header .carrinho .count {
 
 #produtos img {
     height: 200px;
+    max-width: 200px;
+    margin: auto;
 }
 /* 
 #produtos .item {
@@ -139,11 +141,31 @@ header .carrinho .count {
 }
 
 .info .preco {
+    display: grid;
+    gap: 5px;
+}
+
+.info .preco .preco-tab {
+    font-size: 12px;
+    text-decoration: line-through;
+    opacity: 0;
+}
+
+.info .preco .preco-tab.active {
+    opacity: 1;
+}
+
+.info .preco .valor {
     font-weight: bold;
 }
 
 .info .parcelamento {
     font-size: 11px;
+    opacity: 0;
+}
+
+.info .parcelamento.active {
+    opacity: 1;
 }
 
 .info button {
@@ -154,19 +176,26 @@ header .carrinho .count {
     padding: 10px 30px;
     border-radius: 4px;
     text-transform: uppercase;
+    opacity: 0;
 }
+
+#produtos .item:hover .info button {
+    opacity: 1;
+}
+
 
 .sec-produtos .arrow {
     position: absolute;
     bottom: 0;
+    cursor: pointer;
 }
 
 .sec-produtos .left {
-    left: 0;
+    left: 10%;
 }
 
 .sec-produtos .right {
-    right: 0;
+    right: 10%;
 }
 
 .sec-produtos .arrow i {
