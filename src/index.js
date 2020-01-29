@@ -116,8 +116,6 @@ function listarProdutos() {
                         ca_produtos.trigger('next.owl.carousel');
                     });
                 });
-            } else {
-                $('#produtos').css('display', 'none');
             }
         });
     });
