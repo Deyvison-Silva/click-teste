@@ -1,3 +1,5 @@
+window.$ = window.jQuery = require('jquery');
+
 const url = 'https://www.clickqi.com.br/api/dataentities/CG/search?_fields=productName,productRating,productListPrice,productBestPrice,productInstallments,productInstallmentsValue,productImage&_sort=productName%20DESC';
 
 function listarProdutos() {
