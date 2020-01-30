@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,6 +105,28 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("window.$ = window.jQuery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\nvar url = 'https://www.clickqi.com.br/api/dataentities/CG/search?_fields=productName,productRating,productListPrice,productBestPrice,productInstallments,productInstallmentsValue,productImage&_sort=productName%20DESC';\n\nfunction listarProdutos() {\n  $(document).ready(function () {\n    $.get(url, function (data) {\n      if (data && data.length) {\n        data.forEach(function (produto) {\n          var itemDiv = document.createElement('div');\n          $(itemDiv).addClass('item');\n          var img = document.createElement('img');\n          $(img).attr('src', produto.productImage);\n          itemDiv.appendChild(img);\n          var infoDiv = document.createElement('div');\n          $(infoDiv).addClass('info');\n          itemDiv.appendChild(infoDiv);\n\n          if (produto.productBestPrice < produto.productListPrice) {\n            var descontoDiv = document.createElement('div');\n            $(descontoDiv).addClass('desconto');\n            infoDiv.appendChild(descontoDiv);\n            var off = document.createElement('span');\n            off.innerText = 'OFF';\n            $(off).addClass('sp-desconto');\n            infoDiv.appendChild(off);\n          }\n\n          var title = document.createElement('span');\n          $(title).addClass('title');\n          title.innerText = produto.productName;\n          infoDiv.appendChild(title);\n          var avaliacao = document.createElement('span');\n          $(avaliacao).addClass('avaliacao');\n          var star;\n\n          for (var i = 0; i < 5; i++) {\n            star = document.createElement('i');\n\n            if (i < produto.productRating / 10) {\n              star.innerText = 'star';\n            } else {\n              star.innerText = 'star_border';\n            }\n\n            $(star).addClass('material-icons');\n            avaliacao.appendChild(star);\n          }\n\n          infoDiv.appendChild(avaliacao);\n          var precoDiv = document.createElement('div');\n          $(precoDiv).addClass('preco');\n          var precoTab = document.createElement('span');\n          $(precoTab).addClass('preco-tab');\n          precoTab.innerText = 'de R$ ' + formatacaoValor(produto.productListPrice);\n\n          if (produto.productBestPrice < produto.productListPrice) {\n            $(precoTab).addClass('active');\n          }\n\n          precoDiv.appendChild(precoTab);\n          var precoAtual = document.createElement('span');\n          $(precoAtual).addClass('valor');\n          precoAtual.innerText = 'por R$ ' + formatacaoValor(produto.productBestPrice);\n          precoDiv.appendChild(precoAtual);\n          infoDiv.appendChild(precoDiv);\n          var parcDiv = document.createElement('span');\n          $(parcDiv).addClass('parcelamento');\n          parcDiv.innerText = 'ou em ' + produto.productInstallments + 'x de ' + formatacaoValor(produto.productInstallmentsValue);\n\n          if (produto.productInstallments > 0) {\n            $(parcDiv).addClass('active');\n          }\n\n          infoDiv.appendChild(parcDiv);\n          var button = document.createElement('button');\n          button.innerText = 'Comprar';\n          infoDiv.appendChild(button);\n          $('#produtos').append(itemDiv);\n        });\n        $(document).ready(function () {\n          var ca_produtos = $(\"#produtos\");\n          ca_produtos.owlCarousel({\n            loop: true,\n            margin: 10,\n            responsiveClass: true,\n            dots: false,\n            responsive: {\n              0: {\n                items: 1\n              },\n              600: {\n                items: 2\n              },\n              800: {\n                items: 3\n              },\n              1000: {\n                items: 4\n              }\n            }\n          });\n          $(\"#arrow_left\").on(\"click\", function () {\n            ca_produtos.trigger('prev.owl.carousel');\n          });\n          $(\"#arrow_right\").on(\"click\", function () {\n            ca_produtos.trigger('next.owl.carousel');\n          });\n        });\n      }\n    });\n  });\n}\n\nfunction formatacaoValor(valor) {\n  return valor.toString().slice(0, -2) + ',' + valor.toString().slice(-2);\n}\n\nlistarProdutos();\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/style.scss":
+/*!************************!*\
+  !*** ./src/style.scss ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"style.css\";\n\n//# sourceURL=webpack:///./src/style.scss?");
+
+/***/ }),
+
+/***/ 0:
+/*!*********************************************!*\
+  !*** multi ./src/index.js ./src/style.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! ./src/index.js */\"./src/index.js\");\nmodule.exports = __webpack_require__(/*! ./src/style.scss */\"./src/style.scss\");\n\n\n//# sourceURL=webpack:///multi_./src/index.js_./src/style.scss?");
 
 /***/ })
 
