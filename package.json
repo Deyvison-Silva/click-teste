@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "owl.carousel": "^2.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -22,6 +23,7 @@
     "postcss-cli": "^6.0.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "style-loader": "^1.1.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.2.2"
