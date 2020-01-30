@@ -88,6 +88,16 @@ header {
     .responsive {
         display: none;
     }
+
+    .owl-dots .owl-dot {
+        &.active span {
+            background-color: #F8475F;
+        }
+
+        &:hover span {
+            background-color: #F8475F;
+        }
+    }
 }
 
 
